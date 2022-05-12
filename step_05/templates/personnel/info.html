@@ -1,0 +1,59 @@
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/personnel/info.css' %}" />
+  </head>
+
+  <body>
+    <div class="main">
+      <h2>员工信息查询系统</h2>
+      <br />
+      <!-- 検索欄の設定 -->
+      <form>
+        <label>ID:</label>
+        <input type="text" name="id" value="{{ p_id }}" id="id" />
+
+        <label>姓名:</label>
+        <input type="text" name="name" value="{{ p_name }}" id="name" />
+        <br />
+
+        <label>所属:</label>
+        <input type="text" name="section" value="{{ p_sec }}" id="section" />
+
+        <label>职位:</label>
+        <input type="text" name="position" value="{{ p_pos }}" id="position"/>
+        <br /><br />
+
+        <div class="button">
+          <button type="submit">搜索</button>
+          <button type="button" onclick="resetVal()">重置</button>
+        </div>
+      </form>
+      <hr />
+
+      <!-- 検索結果出力テーブルの設定 -->
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>姓名</th>
+          <th>所属</th>
+          <th>职位</th>
+        </tr>
+
+        {% for staff in staffList %}
+        <tr>
+          <td>{{ staff.id }}</td>
+          <td><a href="detail/{{ staff.id }}">{{ staff.name }}</a></td>
+          <td>{{ staff.section }}</td>
+          <td>{{ staff.position }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br /><br />
+      信息如上
+    </div>
+  </body>
+
+<script type="text/javascript" src="{% static '/personnel/info.js' %}"></script>
+
+</html>

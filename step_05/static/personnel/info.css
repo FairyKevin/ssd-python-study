@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .main {
+    width: 600px;
+    background-color: #f2f2f2;
+    margin: 60px auto 0 auto;
+    padding: 10px;
+  }
+  h2 {
+    color: rgb(38, 0, 255);
+    text-align: center;
+  }
+  label {
+    display: inline-block;
+    width: 40px;
+    padding: 10px 0px 5px 60px;
+  }
+  .button{
+      text-align: right;
+      padding: 0px 20px 0px 0px;
+  }
+  button {
+    font-size: 16px;
+    width: 60px;
+  }
+  hr {
+    margin: 15px 0;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    border: 1px solid #000;
+    width: 150px;
+    text-align: center;
+  }
+  th {
+    background-color: burlywood;
+  }

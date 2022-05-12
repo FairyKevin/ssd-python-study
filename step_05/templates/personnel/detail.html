@@ -1,0 +1,51 @@
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/personnel/detail.css' %}" />
+  </head>
+
+  <body>
+    <div class="main">
+      <h2>员工信息详情</h2>
+      <br />
+
+      <!-- 検索結果出力テーブルの設定 -->
+      <table>
+        <tr>
+          <th>ID</th>
+          <td>{{ staff.id }}</td>
+        </tr>
+        <tr>
+          <th>姓名</th>
+          <td>{{ staff.name }}</td>
+        </tr>
+        <tr>
+          <th>所属</th>
+          <td>{{ staff.section }}</td>
+        </tr>
+        <tr>
+          <th>职位</th>
+          <td>{{ staff.position }}</td>
+        </tr>
+        <tr>
+          <th>性别</th>
+          <td>{{ staff.sex }}</td>
+        </tr>
+        <tr>
+          <th>学历</th>
+          <td>{{ staff.edu }}</td>
+        </tr>
+        <tr>
+          <th>出生日期</th>
+          <td>{{ staff.birthday|date:"Y-m-d" }}</td>
+        </tr>
+        <tr>
+          <th>入职时间</th>
+          <td>{{ staff.entry|date:"Y-m-d" }}</td>
+        </tr>
+      </table>
+      <br />
+      <a href="/personnel/info"> 返回查询页面 </a>
+    </div>
+  </body>
+</html>
